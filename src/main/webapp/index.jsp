@@ -1,82 +1,111 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My First Jenkins CI/CD</title>
+    <title>CI/CD Deployment Success</title>
+
     <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #ffffff;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        * {
+            box-sizing: border-box;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 40px 50px;
-            border-radius: 14px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background: radial-gradient(circle at top, #1e3c72, #2a5298);
+            color: #ffffff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
+            padding: 45px 55px;
+            width: 520px;
             text-align: center;
-            max-width: 520px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.45);
         }
 
         h1 {
-            margin-bottom: 10px;
-            font-size: 32px;
+            margin: 0;
+            font-size: 30px;
             font-weight: 600;
         }
 
         h2 {
-            margin-top: 0;
-            font-size: 18px;
+            margin-top: 8px;
+            font-size: 16px;
             font-weight: 400;
-            color: #cfd8dc;
+            color: #dbe7ff;
         }
 
         .pipeline {
-            margin: 25px 0;
-            font-size: 16px;
+            margin: 28px 0;
+            font-size: 15px;
             font-weight: 500;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
         }
 
         .pipeline span {
-            color: #00e5ff;
+            padding: 6px 12px;
+            margin: 0 4px;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 6px;
+        }
+
+        .info {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #e3f2fd;
         }
 
         .footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #b0bec5;
+            margin-top: 26px;
+            font-size: 13px;
+            color: #cfd8dc;
         }
 
-        .footer strong {
-            color: #ffffff;
+        .badge {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 14px;
+            font-size: 12px;
+            background: #00e5ff;
+            color: #003344;
+            border-radius: 20px;
+            font-weight: 600;
         }
     </style>
 </head>
 
 <body>
-    <div class="card">
-        <h1>🚀 CI/CD Pipeline Deployed</h1>
-        <h2>Jenkins · Gradle · Tomcat · Git</h2>
+    <div class="container">
+        <h1>🚀 Deployment Successful</h1>
+        <h2>Automated CI/CD Pipeline</h2>
 
         <div class="pipeline">
-            <span>Git</span> → <span>Jenkins</span> → <span>Gradle</span> → <span>Tomcat</span>
+            <span>Git</span> →
+            <span>Jenkins</span> →
+            <span>Maven</span> →
+            <span>Tomcat</span>
         </div>
 
-        <p>
-            This Java web application was automatically built and deployed using a
-            Continuous Integration and Continuous Deployment (CI/CD) pipeline.
-        </p>
+        <div class="info">
+            This Java web application was built and deployed automatically
+            using Jenkins whenever code was pushed to the Git repository.
+        </div>
+
+        <div class="badge">
+            LIVE ON TOMCAT
+        </div>
 
         <div class="footer">
-            Deployed by <strong>Aman Mehtar</strong><br/>
-            <%= new java.util.Date() %>
+            Developed by <strong>Aman Mehtar</strong><br/>
+            Deployed at <%= new java.util.Date() %>
         </div>
     </div>
 </body>
