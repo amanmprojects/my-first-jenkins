@@ -1,14 +1,11 @@
-// Define a group and version for your project
-group 'com.amanmprojects'
-version '1.0.0-SNAPSHOT'
-
-// Define a task to copy the static HTML file to a distribution directory
-tasks.register('copyStaticFiles', Copy) {
-    from('.') {
-        include 'index.html' // Include only the index.html file from the root directory
-    }
-    into("${buildDir}/dist") // Copy it into the 'build/dist' directory
+plugins {
+    id 'java'
+    id 'war'
 }
 
-// Make the default 'build' task depend on this new task
-build.dependsOn('copyStaticFiles')
+group = 'com.aman'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
